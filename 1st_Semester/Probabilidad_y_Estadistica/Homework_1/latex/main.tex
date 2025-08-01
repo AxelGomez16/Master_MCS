@@ -1,0 +1,233 @@
+\documentclass{article}%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{enumitem} % for custom labels
+\usepackage{multicol}
+\usepackage{xcolor} % For custom colors
+\usepackage{hyperref} % For colored references (must be loaded LAST)
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue, % Color for \ref
+    citecolor=blue, % Color for \cite
+    urlcolor=blue   % Color for \url
+}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning,intersections}
+% Define colors with opacity
+\colorlet{setIcolor}{red!30}
+\colorlet{setIIcolor}{blue!30}
+\colorlet{setIIIcolor}{green!30}
+\colorlet{resultcolor}{orange!50}
+%-------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\setlength{\textwidth}{7.0in}
+\setlength{\oddsidemargin}{-0.35in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\parindent}{0.3in}
+\setlength{\headheight}{22.43335pt}
+
+\usepackage{titlesec}
+
+% Customize section title size and spacing
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titlespacing{\section}{0pt}{14pt}{8pt}
+
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titlespacing{\subsection}{0pt}{10pt}{6pt}  % Adjust spacing (before/after)
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Julio 31, 2025}
+\chead{Probabilidad \& Estadística }
+\lhead{Saul Axel Lopez Gomez}
+\rfoot{ \thepage}
+
+\begin{document}
+
+
+\begin{Large}
+\begin{center}
+\textbf{Operaciones con Conjuntos y Diagramas de Venn} \\
+\end{center}
+\end{Large}
+
+\vspace{0.2in}
+
+\begin{small}
+    \section*{A partir del universo y subconjuntos, encontrar por extension y graficar los diagramas de Venn los siguientes incisos} \textit{}
+\end{small}
+
+\vspace{0.2in}
+
+Sea: 
+
+\begin{itemize}
+    \item U = \{X $\in$ letras del abecedario \} \hspace{0.20in} Nota: No se incluye "ñ" ni "LL"
+    \item I = \{X $\in$ vocales \}
+    \item II = \{X = h; $\quad$ X = j; $\quad$ o $<$ X $\leq$ s  \}
+    \item III = \{a $\leq$ X $<$ k; $\quad$  X = o; $\quad$ X = u  \}
+     \item IV = \{f $\leq$ X $<$ i; $\quad$ j $\leq$ X $<$ o $\quad$  p $\leq$ X $\leq$ s \}
+\end{itemize}
+
+\vspace{0.10in}
+
+Hallar por extension y generar el diagra de Venn para cada caso:
+
+\begin{enumerate}[label=\alph*)]
+    \item (I - II') $\cup$ (III' $\cap$ II)'     \label{a}
+    \item (II $\cap$ III) - (IV' $\cup$ I')         \label{b}
+    \item (III $\cup$ II) $\cap$ (II' $\cap$ IV)'   \label{c}
+    \item (II $\cap$ III)' $\cap$ (I $\cup$ II')'   \label{d}
+    \item (III $\cup$ II)' $\cap$ (II' $\cap$ I)'    \label{e}
+    \item (III' $\cup$ II') $\cap$ (II' $\cap$ I)' - (IV' - III)   \label{f}
+\end{enumerate}
+
+\vspace{0.4in}
+
+\textbf{Solucion:} 
+\vspace{0.3in}
+
+Como primer paso se debe de encontrar todos los subconjuntos y sus complementos, por lo tanto quedan como:
+
+
+\begin{itemize}
+    \item U = \{ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z \} 
+\end{itemize}
+
+
+\begin{itemize}
+
+    \item I = \{a, e, i, o, u\}
+    \item I' = \{ b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, w, x, y, z \} 
+
+    \item II = \{ h, j, p, q, r, s  \}
+    \item II' = \{ a, b, c, d, e, f, g, i, k, l, m, n, o, t, u, v, w, x, y, z \} 
+
+    \item III = \{ a, b, c, d, e, f, g, h, i, j, o, u  \}       
+    \item III' = \{ k, l, m, n, p, q, r, s, t, v, w, x, y, z \}
+
+    \item IV = \{ f, g, h, j, k, l, m, n, p, q, r, s  \}
+    \item IV' = \{ a, b, c, d, e, i, o, t, u, v, w, x, y, z \} 
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{a}
+\include{b}
+\include{c}
+\include{d}
+\include{e}
+\include{f}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+\end{document}
