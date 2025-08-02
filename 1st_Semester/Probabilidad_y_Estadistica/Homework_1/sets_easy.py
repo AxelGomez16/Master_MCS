@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+from matplotlib_venn import venn2
+
 U = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" }
 
 I =  {"a", "e", "i", "o", "u" }
@@ -12,6 +15,14 @@ III_ =  { "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"  
 IV = { "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s"   }
 IV_ = { "a", "b", "c", "d", "e", "i", "o", "t", "u", "v", "w", "x", "y", "z"  } 
 
+
+
+# b)
+a = II.intersection(III)
+b = IV_.union(I_)
+ab = a.difference(b)
+
+print(sorted( ab ))
 
 # C)
 # a = III.union(II)
@@ -37,15 +48,21 @@ IV_ = { "a", "b", "c", "d", "e", "i", "o", "t", "u", "v", "w", "x", "y", "z"  }
 
 
 # f)
-a = III_.union(II_)
-b = II_.intersection(I)
-b_ = U.difference(b)
-b = II_.intersection(I)
-c = IV_.difference(III) 
-ab = a.intersection(b_)
-abc = ab.difference(c)
+# a = III_.union(II_)
+# b = II_.intersection(I)
+# b_ = U.difference(b)
+# b = II_.intersection(I)
+# c = IV_.difference(III) 
+# ab = a.intersection(b_)
+# abc = ab.difference(c)
 
 
 
-print(sorted( abc ))
+# print(sorted( abc ))
+
+
+# plt.figure(figsize=(6, 4))
+# venn2([II, IV], set_labels=('II', 'IV'))
+# plt.title("Intersection: II ∩ IV")
+# plt.show()
 
