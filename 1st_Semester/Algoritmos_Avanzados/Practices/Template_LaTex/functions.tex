@@ -1,0 +1,28 @@
+% ------------------------------
+% GRAPHICS
+% ------------------------------
+\usepackage{graphicx} % Make sure to include this in your preamble
+
+% ------------------------------
+% CODE LISTINGS
+% ------------------------------
+\usepackage{listings}
+\usepackage{xcolor} % for colors (optional)
+\usepackage{caption} % to style captions nicely
+% -------------------------------------------------
+
+
+% Define a new command \addFig that takes arguments: 
+
+% #1 = image filename
+% #2 = caption text
+% #3 = width (e.g., 0.5\linewidth, 5cm, etc.)
+\newcommand{\addFig}[3]{%
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=#3]{#1}
+    \caption{#2}
+    \label{fig:#1}
+  \end{figure}
+}
+

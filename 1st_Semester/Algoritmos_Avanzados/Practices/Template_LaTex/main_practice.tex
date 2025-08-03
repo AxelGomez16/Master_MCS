@@ -1,0 +1,294 @@
+\documentclass[12pt,a4paper]{article}
+
+% ------------------------------
+% LANGUAGE AND ENCODING
+% ------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{csquotes} % Recommended by biblatex with babel
+
+% ------------------------------
+% MATH AND SYMBOLS
+% ------------------------------
+\usepackage{amsmath, amssymb, amsfonts, bm, cancel, braket}
+
+% ------------------------------
+% PAGE AND MARGIN SETTINGS
+% ------------------------------
+\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+\setlength{\headheight}{14.61pt} % Fix fancyhdr warning
+\addtolength{\topmargin}{-2.61pt}
+
+% ------------------------------
+% HEADER & FOOTER
+% ------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\textit{\rightmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+% ------------------------------
+% GRAPHICS
+% ------------------------------
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+% ------------------------------
+% TABLES AND COLORS
+% ------------------------------
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{booktabs}
+\AtBeginDocument{%
+  \renewcommand{\tablename}{Tabla}%
+  \renewcommand{\listtablename}{Índice de tablas}%
+}
+
+% ------------------------------
+% CODE LISTINGS
+% ------------------------------
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=8pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single,
+    rulecolor=\color{black}
+}
+\lstset{style=mystyle}
+
+% ------------------------------
+% HYPERLINKS
+% ------------------------------
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+% ------------------------------
+% BIBLIOGRAPHY (APA 7)
+% ------------------------------
+%\usepackage[style=apa, backend=biber, language=spanish]{biblatex}
+%\addbibresource{references.bib} % File should be named references.bib
+\usepackage{apacite}
+
+
+% ------------------------------
+% CAPTIONS AND LIST NAMES
+% ------------------------------
+\usepackage{caption}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Índice de Códigos}
+
+
+% ------------------------------
+% FUNCTIONS
+% ------------------------------
+\input{functions.tex}
+
+% ------------------------------
+% DOCUMENT BEGIN
+% ------------------------------
+\begin{document}
+
+% ------------------------------
+% TITLE PAGE
+% ------------------------------
+\begin{titlepage}
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{images/logo_uaq_info.png}
+        \vspace{1cm}
+
+        {\Large \textbf{Universidad Autónoma de Querétaro}}\\[0.5cm]
+        {\large Facultad de Informática}\\[1cm]
+
+        {\Large \textbf{Algoritmos Avanzados}}\\[0.5cm]
+        {\large Dra. Diana Córdova Esparza}\\[1.5cm]
+
+        {\LARGE \textbf{Práctica \#1}}\\[0.2cm]
+        {\large \textit{Vectores y MATLAB}}\\[1cm]
+
+        {\large Saúl Axel López Gómez}\\[0.3cm]
+        {\large Agosto 2, 2025}
+    \end{center}
+\end{titlepage}
+
+% ------------------------------
+% CONTENTS
+% ------------------------------
+\tableofcontents
+\listoffigures
+\listoftables
+\lstlistoflistings
+\clearpage
+
+% ------------------------------
+% SECTIONS
+% ------------------------------
+\section{Introducción}
+Aquí inicia la introducción del documento. Explica brevemente los objetivos de la práctica, la importancia del tema, y una visión general.
+
+\section{Fundamentos teóricos}
+Expón los conceptos que sustentan la práctica. Puedes incluir fórmulas, definiciones o diagramas. Por ejemplo, según \cite{2022}, el estudio de la óptica tiene aplicaciones fundamentales en telecomunicaciones.
+
+\section{Material}
+\begin{itemize}
+    \item MATLAB R2023a
+    \item PC con sistema operativo Windows 11
+    \item Documentación oficial de MATLAB
+\end{itemize}
+
+\section{Metodología}
+Aquí un ejemplo de figura: 
+
+
+\addFig{images/logo_uaq_info.png}{This is the caption}{0.6\linewidth}
+
+\begin{table}[htp]
+\begin{center}
+\caption[Factor, dimensiones y masa de la familia de satélites CubeSat]{Factor, dimensiones y masa de la familia de satélites CubeSat }\vspace{0.1in}
+\label{cubedimen}
+\begin{tabular}{clclclclc}
+\hline
+Factor               &  & \begin{tabular}[c]{@{}c@{}}X Dim\\ (cm)\end{tabular} &  & \begin{tabular}[c]{@{}c@{}}Y Dim\\ (cm)\end{tabular} &  & \begin{tabular}[c]{@{}c@{}}Z Dim\\ (cm)\end{tabular} &  & \begin{tabular}[c]{@{}c@{}}Masa\\ (kg)\end{tabular} \\ \hline
+\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
+1U                   &  & 10                                                   &  & 10                                                   &  & 10                                                   &  & 1.33                                                \\
+\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
+1.5U                 &  & 10                                                   &  & 10                                                   &  & 15                                                   &  & 1.55                                                \\
+\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
+2U                   &  & 10                                                   &  & 10                                                   &  & 20                                                   &  & 2.66                                                \\
+\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
+3U                   &  & 10                                                   &  & 10                                                   &  & 30                                                   &  & 4.00                                                \\
+\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
+6U                   &  & 10                                                   &  & 20                                                   &  & 30                                                   &  & 8.00                                                \\
+\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
+12U                  &  & 20                                                   &  & 20                                                   &  & 30                                                   &  & 12.00                                               \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{Resultados}
+Ejemplo de código en MATLAB con su cita:
+
+\begin{lstlisting}[language=Matlab, caption={Vectorización de datos}]
+x = 0:0.1:2*pi;
+y = sin(x);
+plot(x, y);
+title('Seno de x');
+xlabel('x');
+ylabel('sin(x)');
+\end{lstlisting}
+
+\newpage
+
+
+
+\section{Conclusiones}
+Resumen de lo aprendido, dificultades encontradas, y reflexiones para futuras prácticas \cite{Blokhin2017}.
+
+\newpage    
+\bibliographystyle{apacite}
+\bibliography{references/references.bib}
+
+\end{document}
+
+
+
+
+
+PONER CODIGOS: 
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=Octave, caption=descripcion]{archivo.m}
+
+
+PONER IMAGENES:
+\begin{figure}[h]
+\centering
+\includegraphics[width=5cm]{NOMBRE DE LA IMAGEN}
+\caption{DESCRIPCION}
+\end{figure}
+
+
+
+PONER IMAGENES DE LADITO
+\begin{wrapfigure}[12]{r}{0.4\linewidth}
+\centering
+\includegraphics[width=5cm]{Escudo.jpg}   
+\caption{Una imagen.}
+\end{wrapfigure}
+
+
+PONER DOS O MAS IMAGENES JUNTAS UNA A LA OTRA
+\begin{figure}[htbp]
+\centering
+\subfigure[descripcion de la primer figura]{\includegraphics[width=5cm]{f2.png}}
+\subfigure[descripcion de la segunda figura]{\includegraphics[width=5cm]{f3.png}}
+\subfigure[descripcion de la tercer figura]{\includegraphics[width=5cm]{f3.png}}
+\vspace{0.20in}
+\caption{Leyenda} 
+\end{figure}
+
+
+
+EXPORTAR DATOS EN TXT A LATEX
+\begin{center}
+\begin{minipage}{9cm}
+\VerbatimInput{datos1.txt}
+\end{minipage}
+\end{center}
+
+
+
+TABLAS      https://www.tablesgenerator.com
+\begin{table}[htp]
+\begin{center}
+\caption[Factor, dimensiones y masa de la familia de satélites CubeSat]{Factor, dimensiones y masa de la familia de satélites CubeSat }\vspace{0.1in}
+\label{cubedimen}
+\begin{tabular}{clclclclc}
+\hline
+Factor               &  & \begin{tabular}[c]{@{}c@{}}X Dim\\ (cm)\end{tabular} &  & \begin{tabular}[c]{@{}c@{}}Y Dim\\ (cm)\end{tabular} &  & \begin{tabular}[c]{@{}c@{}}Z Dim\\ (cm)\end{tabular} &  & \begin{tabular}[c]{@{}c@{}}Masa\\ (kg)\end{tabular} \\ \hline
+\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
+1U                   &  & 10                                                   &  & 10                                                   &  & 10                                                   &  & 1.33                                                \\
+\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
+1.5U                 &  & 10                                                   &  & 10                                                   &  & 15                                                   &  & 1.55                                                \\
+\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
+2U                   &  & 10                                                   &  & 10                                                   &  & 20                                                   &  & 2.66                                                \\
+\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
+3U                   &  & 10                                                   &  & 10                                                   &  & 30                                                   &  & 4.00                                                \\
+\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
+6U                   &  & 10                                                   &  & 20                                                   &  & 30                                                   &  & 8.00                                                \\
+\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
+12U                  &  & 20                                                   &  & 20                                                   &  & 30                                                   &  & 12.00                                               \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
