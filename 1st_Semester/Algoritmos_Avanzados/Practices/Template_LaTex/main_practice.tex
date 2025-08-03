@@ -155,68 +155,13 @@
 % ------------------------------
 % SECTIONS
 % ------------------------------
-\section{Introducción}
-Aquí inicia la introducción del documento. Explica brevemente los objetivos de la práctica, la importancia del tema, y una visión general.
-
-\section{Fundamentos teóricos}
-Expón los conceptos que sustentan la práctica. Puedes incluir fórmulas, definiciones o diagramas. Por ejemplo, según \cite{2022}, el estudio de la óptica tiene aplicaciones fundamentales en telecomunicaciones.
-
-\section{Material}
-\begin{itemize}
-    \item MATLAB R2023a
-    \item PC con sistema operativo Windows 11
-    \item Documentación oficial de MATLAB
-\end{itemize}
-
-\section{Metodología}
-Aquí un ejemplo de figura: 
-
-
-\addFig{images/logo_uaq_info.png}{This is the caption}{0.6\linewidth}
-
-\begin{table}[htp]
-\begin{center}
-\caption[Factor, dimensiones y masa de la familia de satélites CubeSat]{Factor, dimensiones y masa de la familia de satélites CubeSat }\vspace{0.1in}
-\label{cubedimen}
-\begin{tabular}{clclclclc}
-\hline
-Factor               &  & \begin{tabular}[c]{@{}c@{}}X Dim\\ (cm)\end{tabular} &  & \begin{tabular}[c]{@{}c@{}}Y Dim\\ (cm)\end{tabular} &  & \begin{tabular}[c]{@{}c@{}}Z Dim\\ (cm)\end{tabular} &  & \begin{tabular}[c]{@{}c@{}}Masa\\ (kg)\end{tabular} \\ \hline
-\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
-1U                   &  & 10                                                   &  & 10                                                   &  & 10                                                   &  & 1.33                                                \\
-\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
-1.5U                 &  & 10                                                   &  & 10                                                   &  & 15                                                   &  & 1.55                                                \\
-\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
-2U                   &  & 10                                                   &  & 10                                                   &  & 20                                                   &  & 2.66                                                \\
-\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
-3U                   &  & 10                                                   &  & 10                                                   &  & 30                                                   &  & 4.00                                                \\
-\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
-6U                   &  & 10                                                   &  & 20                                                   &  & 30                                                   &  & 8.00                                                \\
-\multicolumn{1}{l}{} &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                 &  & \multicolumn{1}{l}{}                                \\
-12U                  &  & 20                                                   &  & 20                                                   &  & 30                                                   &  & 12.00                                               \\ \hline
-\end{tabular}
-\end{center}
-\end{table}
-
-\section{Resultados}
-Ejemplo de código en MATLAB con su cita:
-
-\begin{lstlisting}[language=Matlab, caption={Vectorización de datos}]
-x = 0:0.1:2*pi;
-y = sin(x);
-plot(x, y);
-title('Seno de x');
-xlabel('x');
-ylabel('sin(x)');
-\end{lstlisting}
-
-\newpage
-
-
-
-\section{Conclusiones}
-Resumen de lo aprendido, dificultades encontradas, y reflexiones para futuras prácticas \cite{Blokhin2017}.
-
-\newpage    
+\include{sections/introduction}
+\include{sections/theorical_fundaments}
+\include{sections/material}
+\include{sections/methodology}
+\include{sections/results}
+\include{sections/conclusions}
+ 
 \bibliographystyle{apacite}
 \bibliography{references/references.bib}
 
