@@ -1,0 +1,17 @@
+name: 1st_semester
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Conda packages
+  - python=3.11
+  - pywin32
+  - pip=22.0.4
+  - pip:
+    # Pip packages
+    - loguru==0.7.3
+    - pandas==2.2.3
+    - numpy==2.3.2
+    - plotly==6.3.0
+    - dash==3.2.0
+    - dash_bootstrap_components==2.0.4
